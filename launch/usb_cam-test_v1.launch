@@ -1,0 +1,25 @@
+<launch>
+  <arg name="enable_one" default="false" />
+  <arg name="device" />
+  <arg name="holis" default="julia" />
+  <param name="param" value="$(arg holis)" />
+  <!--se tendra que cambiar cuando ejectutes el launch-->
+  <!--include file="$(find usb_cam)/launch/usb_cam-test.launch"-->
+	<!--arg name="devoce" value)"/dev/video0" -->
+  <!--/include-->
+
+  <node name="usb_cam" pkg="usb_cam" type="usb_cam_node" output="screen" >
+    <param name="video_device" value="/dev/video0" />
+    <param name="image_width" value="640" />
+    <param name="image_height" value="480" />
+    <param name="pixel_format" value="yuyv" />
+    <param name="camera_frame_id" value="usb_cam" />
+    <param name="io_method" value="mmap"/>
+  </node>
+  <remap from="/viewer_1/image" to="/usb_cam/image_raw"/>
+  <group ns="viewer_1">
+  <node name="image_view" pkg="image_view" type="image_view" respawn="false" output="screen">
+    <param name="autosize" value="true" />
+  </node>
+  </group>
+</launch>

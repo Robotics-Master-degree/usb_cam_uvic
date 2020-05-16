@@ -1,0 +1,3 @@
+<load>
+  <rosparam command="load" file=$(find usb_cam_vic)/config/all_params.yaml
+</load>

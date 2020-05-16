@@ -1,0 +1,24 @@
+image_view: {autosize: true, colormap: -1, do_dynamic_scaling: false, max_image_value: 0.0,
+  min_image_value: 0.0}
+rosdistro: 'melodic
+
+  '
+roslaunch:
+  uris: {host_j_laptop__35263: 'http://J-laptop:35263/', host_j_laptop__42071: 'http://J-laptop:42071/',
+    host_j_laptop__42177: 'http://J-laptop:42177/', host_j_laptop__42633: 'http://J-laptop:42633/',
+    host_j_laptop__45915: 'http://J-laptop:45915/'}
+rosversion: '1.14.3
+
+  '
+run_id: 0e6ce11e-0242-11ea-ad5c-380025a0de67
+usb_cam:
+  camera_frame_id: usb_cam
+  image_height: 480
+  image_raw:
+    compressed: {format: jpeg, jpeg_quality: 80, png_level: 9}
+    compressedDepth: {depth_max: 10.0, depth_quantization: 100.0, png_level: 9}
+    theora: {keyframe_frequency: 64, optimize_for: 1, quality: 31, target_bitrate: 800000}
+  image_width: 640
+  io_method: mmap
+  pixel_format: yuyv
+  video_device: /dev/video0
